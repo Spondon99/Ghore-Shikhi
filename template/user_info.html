@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<style>
+
+body{
+
+        background-image: url("images/top_bg.jpg");
+
+    }
+p{
+        font-family: 'Bebas Neue', cursive;
+		font-size: 20px;
+	}
+
+li{
+        font-family: 'Bebas Neue', cursive;
+		font-size: 20px;
+	}
+
+.card-body {
+  box-shadow: 0 4px 8px 0 rgba(5, 5, 5, 0.2);
+  transition: 0.5s;
+ }
+.card-body:hover {
+  box-shadow: 0 8px 16px 0 rgba(214, 218, 10, 0.993);
+}
+</style>
+
+
+
+
+
+<head>
+	<title>User Profile</title>
+	 <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <!-- custom styles -->
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link rel="stylesheet" href="images/styles.css">
+	     <nav class="navbar navbar-expand-lg panda-bg-info bg-light navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/undraw_handcrafts_planet.svg" width="50px" height="50px" alt="">
+                </a>
+                <h1 id="ghoreshikhi">Ghoreshikhi</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav  mb-2 mb-lg-0">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold" href="login.html">Log out <i class="fas fa-sign-out-alt"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<br><br><br><br><br>
+	<div class="d-flex flex-column  align-items-center " >               
+		<h2 style="text-align:center;" class="mb-5">{{loginname}}: ID {{data[0]}}</h2>
+		<img src="images/vote_1.png" width="200px" alt="">
+
+	</div>
+	<br><br>
+	
+	<div class="container">
+		
+		<div class="row">
+			
+		    <div class="col-md-6">
+		    	<h1>Current Courses</h1>
+				<div class="card card-body">
+				    {% for row in data1 %}
+					<ul>
+				    	<li>{{row[0]}}</li>
+				    </ul>
+				    {% endfor %}
+				</div>
+			</div>
+			
+			<div class="col-md-6">
+                <div class="d-flex">
+                    <h1>Career Path</h1>
+                    <img src="images/undraw_handcrafts_growth.svg" width="50px" height="50px" alt="">
+                </div>
+				
+				<div class="card card-body">
+				    {% for row in data6 %}
+				    <p>{{row[0]}}</p>
+				    {% endfor %}
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="row">
+			
+		    <div class="col-md-6">
+		    	<h1>Recent Quizzes</h1>
+				<div class="card card-body">
+				    {% for row in data5 %}
+					<ul>
+				    	<li>{{row[0]}}</li>
+				    </ul>
+				    {% endfor %}
+				</div>
+			</div>
+			
+			<div class="col-md-6">
+				<h1>Certificates</h1>
+				<div class="card card-body">
+				    {% for row in data2 %}
+				    	<p>{{row[0]}}</p>
+				    {% endfor %}
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="row">
+			<div class="col-md-6">
+				<h1>Contact Info</h1>
+				<div class="card card-body">
+					<p>Mob no:
+					   {% for row in data3 %}
+					    {{row[0]}}            
+					   {% endfor %}
+					</p>
+					<p>Email-ID:
+						{% for row in data4 %}
+						{{row[0]}}  
+						{% endfor %}						
+					</p>
+						
+				</div>
+				
+			</div>
+			
+		    <div class="col-md-6">
+				<h1>Payment Info</h1>
+				<div class="card card-body">
+					<pre><p>Paid Amount: {{data7[0]}}    Due Amount: {{data7[1]}}</p></pre>
+					<p>Payment Method: {{data7[2]}}</p>
+				</div>
+			</div>
+			
+		</div>
+    </div>
+
+</body>
+</html>
